@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGrowth exercice</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body onload="onLoad()">
+    <div class="loader-cont">
+        <div class="loader">
+            <div class="loader-element loader-1"></div>
+            <div class="loader-element loader-2"></div>
+            <div class="loader-element loader-3"></div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- List -->
+        <div class="card-cont">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date de création</th>
+                        <th>Etat</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Nom d'utilisateur</th>
+                        <th>Matricule</th>
+                        <th>Action</th>
+                      </tr>
+                </thead>
+                <tbody id="table-data"></tbody>
+              </table>              
+        </div>
+    </div>
+    <div class="modal-cont" >
+        <div class="modal">
+            <div class="close-svg" onclick="hideModal()">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 145.49L366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z"></path></svg>            
+            </div>
+            <br/>
+            <div class="modal-body" id="model-data"></div>
+        </div>
+    </div>
+    <div class="card-cont">
+        <button class="btn" onclick="showModal('form')" style="margin-left: auto;">Ajouter utilisateur</button>
+    </div>
+    <div id="form" style="display: none;">
+        <div class="title">Ajout d'utilisateur</div>
+        <div class="form-group">
+            <div class="inputs-group ">
+                <div class="input-cont">
+                    <label>Nom</label>
+                    <input type="text" name="lastName" />
+                    <div class="err-msg"></div>
+                </div>
+                <div class="input-cont">
+                    <label>Nom d'utilisateur</label>
+                    <input type="text" name="userName" />
+                    <div class="err-msg"></div>
+                </div>
+                <div class="input-cont">
+                    <label>Matricule</label>
+                    <input type="text" name="registrationNumber" />
+                    <div class="err-msg"></div>
+                </div>
+            </div>
+            <div class="inputs-group ">
+                <div class="input-cont">
+                    <label>Prenom</label>
+                    <input type="text" name="firstName" />
+                    <div class="err-msg"></div>
+                </div>
+                <div class="input-cont">
+                    <label>Date de création</label>
+                    <input type="date" name="createdDate" />
+                    <div class="err-msg"></div>
+                </div>
+            </div>
+            <div class="inputs-group ">
+                <div class="input-cont">
+                    <label>Etat</label>
+                    <select name="status" >
+                        <option value="En validation">En validation</option>
+                        <option value="Validé">Validé</option>
+                        <option value="Rejeté">Rejeté</option>
+                    </select>
+                    <div class="err-msg"></div>
+                </div>
+            </div>
+        </div>
+        <div class="element-modal">
+            <button class="btn" onclick="addNewElement()" style="margin-left: auto;padding-inline: 30px;">Enregister</button>
+        </div>
+    </div>
+    <div id="delete-confimation" style="display: none;">
+        <div class="confirmation-message">Êtes-vous sûr de bien vouloir supprimer cet élément?</div>
+        <div class="button-group">
+            <button class="btn btn-secondry" onclick="hideModal()">Annuler</button>
+            <button class="btn btn-remove" onclick="ondeleteElement()">Supprimer</button>
+        </div>
+    </div>
+    <div class="toast-container"></div>
+</body>
+
+<script src="index.js"></script>
+<script>
+    const onLoad = ()=>{
+        setTimeout(() => {
+            const e = document.querySelector('.loader-cont');
+            e.style.opacity=0;
+            setTimeout(() => { e.remove(); }, 500);
+        }, 2000);;
+    }
+</script>
+</html>

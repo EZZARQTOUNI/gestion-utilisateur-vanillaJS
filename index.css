@@ -1,0 +1,323 @@
+*{margin: 0;padding:0;}
+body{background: #fafafa;}
+.card-cont {
+    width: 85%;
+    margin: 25px auto;
+    background: #fff;
+    padding: 35px 5%;
+    border: 1px solid #f5f5f5;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0px 1.5px 5px 0px #00000021;
+    overflow-x: auto;
+}
+button.btn {
+    padding: 14px 25px;
+    border-radius: 10px;
+    border: 0;
+    background: #ffaa0a;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    transition: background .25s ease;
+}
+
+button.btn:hover{
+    background: #ff9800;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+tr {
+    border-bottom: 1px solid #ddd;
+}
+tbody tr:last-of-type{border-bottom: none;}
+td,th{
+    text-align: left;
+    padding: 10px;
+    font-size: 14px;
+}  
+.modal-cont {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0000003d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 1, 1);
+    opacity: 0;
+    z-index: -1;
+}
+.modal {
+    max-width: 900px;
+    transform: scale(0);
+    transition: transform .4s cubic-bezier(0.68, -0.55, 0.27, 1.55),opacity 0.25s ease;
+    width: 80%;
+    background: white;
+    margin: auto;
+    padding: 20px 0;
+    position: relative;
+    border-radius: 16px;
+    opacity: 0;
+    box-shadow: 0 0 4px 1px #00000029;
+    transition-delay: .2s;
+}
+.modal-body{
+    max-height: 90vh;
+    overflow-y: auto;
+    padding-inline: 20px;
+}
+.show .modal{transform: scale(1);opacity: 1;}
+.modal-cont.show {opacity: 1;z-index: 1;}
+.modal-cont.hide {display: none;}
+
+.close-svg {
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.close-svg svg {
+    width: 22px;
+    height: 22px;
+}
+.title {
+    font-family: sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #2b313f;
+}
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+.input-cont label {
+    display: block;
+    color: #424242;
+    margin: 5px 0;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+.inputs-group {
+    flex: 1;
+    width: 31.33%;
+    min-width: 200px;
+    padding: 1%;
+}
+input,select {
+    width: 100%;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #424242;
+    margin: 7px 0;
+    padding: 2px 5px;
+    padding: 2px 5px;
+    box-shadow: 0 0 3px 0px #00000026;
+}
+select {
+    width: calc(100% + 10px);
+    height: 35px;
+}
+.err-msg {
+    display: flex;
+    min-height: 20px;
+    font-weight: 700;
+    color: #f44336;
+    font-size: 14px;
+    font-family: monospace;
+}
+.input-cont {
+    width: 95%;
+}
+.confirmation-message {
+    font-weight: 900;
+    font-family: monospace;
+    font-size: 18px;
+    padding: 50px 0px;
+}
+.button-group {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    gap: 10px;
+}
+button.btn-remove {
+    background: #f44336;
+}
+button.btn-remove:hover {
+    background: #dc3545;
+}
+button.btn-secondry {
+    border: 2px solid;
+    background: transparent;
+    color: #212121;
+}
+button.btn-secondry:hover {
+    background: #212121;
+    color: #fff;
+}
+.svg-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.svg-container svg {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.tags{
+    padding: 10px 2px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+}
+.En.validation {
+    background-color: #FDB64D;
+}
+.Validé {
+    background: #5BE881;
+}
+.Rejeté {
+    background-color: #FF0000;
+}
+.loader-cont {
+    width: 100vw;
+    height: 100vh;
+    background: #fafafa;
+}
+.loader-cont {
+    width: 100vw;
+    height: 100vh;
+    background: #fafafa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity .5s ease;
+}
+.loader-element {
+    background: #2196f3;
+    width: 15px;
+    height: 55px;
+    margin: 5px;
+    transform: scaleY(1) ;
+    
+}
+.loader-1 {
+    animation: animation1 1s cubic-bezier(0.43, -0.14, 0, 0.85) 0s infinite;
+}
+.loader-2 {
+    animation: animation1 1s cubic-bezier(0.43, -0.14, 0, 0.85) 0.5s infinite;
+}.loader-3 {
+    animation: animation1 1s cubic-bezier(0.43, -0.14, 0, 0.85) 1s infinite;
+}
+.loader {
+    display: flex;
+}
+
+@keyframes animation1{
+    0%{
+         transform: scaleY(1) ;
+    }
+    50%{
+        transform: scaleY(1.5) ;
+    }
+    60%{
+        transform: scaleY(1.5) ;
+    }
+    100%{
+        transform: scaleY(1) ;
+
+    }
+}
+
+.toast-container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 300px;
+    right: 10px;
+    flex-direction: column-reverse;
+    align-items: center;
+    z-index: 10;
+}
+.toast-element {
+    width: 300px;
+    max-width: 90%;
+    background: #fff;
+    height: auto;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px 1px #00000030;
+    display: flex;
+    min-height: 40px;
+    align-items: center;
+    transform: scale(0);
+    transition: transform .6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.toast-element.show{transform: scale(1);}
+.svg-el {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #fff;
+    background: #4caf50;
+    margin-inline: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+}
+.toast-error .svg-el {background: #f44336;}
+.toast-element.taost-done {
+    border-left: 5px solid #4caf50;
+}
+.toast-element.toast-error {
+    border-left: 5px solid #f44336;
+}
+.rmv-toast {
+    position: absolute;
+    top: 5px;
+    color: black;
+    right: 5px;
+    cursor: pointer;
+}
+.rmv-toast svg {
+    width: 20px;
+    height: 20px;
+}
+.toast-msg {
+    font-family: serif;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
